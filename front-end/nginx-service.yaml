@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx-proxy
+  ports:
+    - port: 80      # Port exposed by the Service
+      targetPort: 80 # Port Nginx listens on
+  type: NodePort # Or LoadBalancer, depending on your needs
