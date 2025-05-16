@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the Flask application code
+# Copy the Flask application code AND the templates directory
 COPY . .
 
 # Set environment variables. These are *defaults* and can be overridden in Kubernetes.
