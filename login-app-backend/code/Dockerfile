@@ -10,8 +10,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set environment variables. These are *defaults* and can be overridden in Kubernetes.
-ENV FLASK_SECRET_KEY="your-super-secret-key"  # Change this!
-ENV DATABASE_HOST="mydb-postgres-service"  # Important: Use the service name
+# change this 
+ENV FLASK_SECRET_KEY="your-super-secret-key"  
+ENV DATABASE_HOST="mydb-postgres-service"  
+# Important: Use the service name
 ENV DATABASE_PORT=5432
 ENV DATABASE_NAME="mydatabase"
 ENV DATABASE_USER="myuser"
@@ -21,3 +23,4 @@ EXPOSE 5000
 
 # Run the application using Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app", "--workers", "3"]
+

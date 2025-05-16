@@ -4,7 +4,7 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app: nginx-proxy
+    app: ngnix-proxy
   ports:
     - port: 80      # Port exposed by the Service
       targetPort: 80 # Port Nginx listens on

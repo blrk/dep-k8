@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app
-  namespace: mtvlabk8su1  # Use the namespace where you want to deploy
 spec:
   replicas: 1
   selector:
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: your-docker-registry/your-flask-app:latest  # Replace this!
+          image: blrk/webapp-backend:1.0.0 
           ports:
             - containerPort: 5000
           env:
@@ -32,7 +31,7 @@ spec:
               value: "mydatabase"
             - name: DATABASE_USER
               value: "myuser"
-            - name: DATABASE_PASSWORD
+            - name: DATABASE_PASS
               valueFrom:
                 secretKeyRef:
                   name: postgres-secret  # Name of your PostgreSQL Secret
